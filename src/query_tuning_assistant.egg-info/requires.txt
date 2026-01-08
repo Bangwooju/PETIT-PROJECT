@@ -1,0 +1,7 @@
+openai
+faiss-cpu
+python-dotenv
+pydantic
+pyyaml
+psycopg2-binary
+rich

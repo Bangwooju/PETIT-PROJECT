@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL 튜닝 도우미</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f7f8fa; }
+        h1 { color: #333; }
+        form { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; padding: 10px; font-family: monospace; font-size: 14px; border-radius: 5px; border: 1px solid #ccc; }
+        button { margin-top: 10px; padding: 10px 20px; background-color: #4caf50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+        .result-box { background-color: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; overflow-x: auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .label { margin-bottom: 5px; font-weight: bold; display: block; }
+        a { text-decoration: none; color: #2196f3; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>SQL 튜닝 도우미</h1>
+
+    <form method="post">
+        <label class="label" for="sql">튜닝할 SQL 입력:</label>
+        <textarea name="sql" id="sql">{{ query or "" }}</textarea>
+        <button type="submit">튜닝 실행</button>
+    </form>
+
+    {% if result %}
+        <label class="label">튜닝된 SQL 결과:</label>
+        <div class="result-box">{{ result }}</div>
+    {% endif %}
+
+    <p><a href="/history">📜 쿼리 기록 보기</a></p>
+</body>
+</html>

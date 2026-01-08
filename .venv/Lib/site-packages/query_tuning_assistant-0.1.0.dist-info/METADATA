@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: query-tuning-assistant
+Version: 0.1.0
+Summary: MCP + RAG based query tuning assistant
+Requires-Python: >=3.11
+Requires-Dist: openai
+Requires-Dist: faiss-cpu
+Requires-Dist: python-dotenv
+Requires-Dist: pydantic
+Requires-Dist: pyyaml
+Requires-Dist: psycopg2-binary
+Requires-Dist: rich

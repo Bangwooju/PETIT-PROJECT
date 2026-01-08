@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>쿼리 기록</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background: #f7f8fa; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; font-family: monospace; }
+        th { background-color: #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        a { text-decoration: none; color: #2196f3; font-weight: bold; }
+        .result-box { white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>쿼리 기록</h1>
+
+    <p><a href="/">🏠 돌아가기</a> | <a href="/download">⬇️ CSV 다운로드</a></p>
+
+    <table>
+        <tr>
+            <th>원본 SQL</th>
+            <th>튜닝된 SQL</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row['query'] }}</td>
+            <td class="result-box">{{ row['result'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+query,result
+"select *
+from xtest
+where concat(gender,' ',lastname) = 'M Radwan'","SELECT gender, lastname
+FROM xtest
+WHERE gender = 'M' AND lastname = 'Radwan';"
+"select empno
+from xtest
+where join_date LIKE '1989%'
+  and empno > 100000","select empno
+from xtest
+where join_date >= '1989-01-01'
+  and join_date < '1990-01-01'
+  and empno > 100000"
+"select emp_no, name
+from xtest
+where join_date between STR_TO_DATE ('1994-01-01', '%Y-%m-%d')
+				  and STR_TO_DATE ('2000-12-31', '%Y-%m-%d')","select emp_no, name
+from xtest
+where join_date between '1994-01-01 00:00:00' and '2000-12-31 00:00:00'"
+"select a.empno,
+	   b.deptno
+from emp a,
+	  dept b
+where a.deptno = b.deptno
+  and a.join_date >= '2002-03-01'","select a.empno,
+       a.deptno
+from emp a
+where a.join_date >= '2002-03-01'
+  and exists (select 1 from dept b where b.deptno = a.deptno);"
