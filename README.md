@@ -1,12 +1,14 @@
 # MINI PROJECT
-# MCP + RAG 기반 SQL 튜닝 웹 어플리케이션
+## MCP + RAG 기반 SQL 튜닝 웹 어플리케이션
 
-> 이 프로젝트는 **MCP(Minimum Change Policy) + RAG(Retrieval-Augmented Generation) + LLM(Google Gemini API)**를 결합하여 SQL 쿼리를 자동으로 튜닝하고, 웹에서 결과를 확인할 수 있는 실무용 도구입니다.
+> 이 프로젝트는 *MCP(Minimum Change Policy) + RAG(Retrieval-Augmented Generation) + LLM(Google Gemini API)* 를 결합하여 SQL 쿼리를 자동으로 튜닝하고, 웹에서 결과를 확인할 수 있는 실무용 도구입니다.
 
 ---
 
 ## 👥 개발인원
+
 방우주, chat-GPT 무료 (로그인 안함)
+
 special thanks to 지현언니
 
 ## ⏰ 개발기간
@@ -21,8 +23,6 @@ special thanks to 지현언니
 - **쿼리 기록**: 입력한 쿼리와 튜닝 결과를 CSV로 저장, 다운로드 가능  
 - **웹 UI**: FastAPI + Jinja2 기반, 입력/결과/히스토리 페이지 제공  
 
----
-
 ## 🛠 기술 스택
 
 - **Backend / Core Logic:** Python 3.11+, FastAPI, LangChain, FAISS, MCP, Gemini API  
@@ -31,7 +31,7 @@ special thanks to 지현언니
 - **Environment / DevOps:** Python Virtual Environment (`.venv`), dotenv (`.env`)  
 - **Others:** python-multipart (FastAPI Form 데이터 처리)  
 
-## 주의
+## ⚠️주의
 현 시점 무료 AI 모델을 사용하였습니다.
 실행시점 사용가능 모델 확인이 필요한 경우 루트 디렉토리의 test.py 실행하여 사용가능 모델 확인하고
 llm.py 파일의 model 을 변경해주시면 됩니다.
@@ -39,7 +39,7 @@ llm.py 파일의 model 을 변경해주시면 됩니다.
 ---
 
 ## 📂 디렉토리 구조
-
+```
 project/
 ├─ .env                        # Gemini API Key 저장
 ├─ queries.csv                  # 쿼리 기록 CSV (자동 생성)
@@ -55,7 +55,7 @@ project/
 │  └─ mcp/
 │     └─ tuner.py               # MCP 쿼리 튜닝 정책
 └─ .venv/                       # 가상환경
-
+```
 ---
 
 ## 설치 및 실행
@@ -111,8 +111,6 @@ http://127.0.0.1:8000
 **입력 SQL**
 SELECT * FROM users WHERE age > 30;
 
-markdown
-코드 복사
 
 **튜닝 결과**
 SELECT id, name, age FROM users WHERE age > 30;
@@ -146,6 +144,10 @@ SELECT id, name, age FROM users WHERE age > 30;
 5. SQL 입력, 결과 확인, 히스토리 다운로드 가능
 
 
+### 실행 화면 예시
+
+<img width="1916" height="759" alt="image" src="https://github.com/user-attachments/assets/3ea0c0f9-df9d-4d6c-b096-797f004ddd6f" />
+
+<img width="1868" height="582" alt="image" src="https://github.com/user-attachments/assets/5b490dcb-f5a9-471d-bab7-3b2592cfce56" />
 
 
-*안녕하세요*
