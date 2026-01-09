@@ -2,7 +2,7 @@ from google import genai
 from google.genai.types import HttpOptions
 
 # 1. 클라이언트 생성 시 api_version을 'v1'으로 고정합니다.
-client = genai.Client(api_key="AIzaSyAGZm0KszgvfaVFYygRBbvBTpcEhZLCBcA")
+client = genai.Client(api_key="")
 
 try:
     # 1. 사용 가능한 모델 목록 가져오기
